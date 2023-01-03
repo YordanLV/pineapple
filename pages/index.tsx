@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import firebase from "../firebase/clientApp";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
-import React from "react";
+import React, { useEffect } from "react";
 import Auth from "../components/Auth";
 import VoterList from "../components/VoterList";
 
