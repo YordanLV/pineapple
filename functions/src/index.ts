@@ -1,11 +1,11 @@
 import * as functions from "firebase-functions";
+import admin = require("firebase-admin");
 
-const admin = require("firebase-admin");
 admin.initializeApp();
 const db = admin.firestore();
 
 export const createUserDocument = functions.auth.user().onCreate((user) => {
   db.collection("users")
-    .doc(user.uid)
-    .set(JSON.parse(JSON.stringify(user)));
+      .doc(user.uid)
+      .set(JSON.parse(JSON.stringify(user)));
 });

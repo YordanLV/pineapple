@@ -25,6 +25,12 @@ export default function Home() {
     {}
   );
 
+  console.log(votes);
+
+  if(!votesLoading && votes) {
+    votes.docs.map((doc) => console.log(doc.data()));
+  }
+
   // Create document function
   const addVoteDocument = async (vote: string) => {
     await db.collection("votes").doc(user.uid).set({
